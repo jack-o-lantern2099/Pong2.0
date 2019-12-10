@@ -1,6 +1,20 @@
 import turtle
 import sys
 import time
+
+
+
+
+print("RULES OF THE GAME:")
+print("1.LOCAL PLAY RULES:")
+print("USE W AND S KEYS TO MOVE THE PADDLE ON YOUR LEFT AND UP AND DOWN KEYS FOR THE PADDLE ON YOUR LEFT.","THE FIRST TO SCORE 10 WINS.",sep='\n')
+print("2.RULES FOR ENDLESS MODE:")
+print("USE UP AND DOWN KEYS TO MOVE YOUR PADDLE.","DONT WORRY,THE OTHER ONE WORKS ON IT OWN.","YOU WILL BE SCORED ON HOW MUCH TIME IT TOOK FOR THE COMPUTER TO REACH 7 POINTS.",sep='\n')
+print("THE POINT OF THIS GAME IS NOT TO WIN BUT TO SURVIVE THE LONGEST.")
+
+
+
+
 input_user=int(input("Enter 1 for LOCAL PLAYERS , Enter 2 for ENDLESS MODE : "))
 
 
@@ -46,8 +60,8 @@ if input_user==1 :
     ball.color("black")
     ball.penup()
     ball.goto(0,0)
-    ball.dx = 0.25
-    ball.dy = 0.25
+    ball.dx = 0.28
+    ball.dy = 0.28
 
     #for scoring
     pen = turtle.Turtle()
@@ -202,8 +216,8 @@ if input_user==2 :
     ball.color("black")
     ball.penup()
     ball.goto(0,0)
-    ball.dx = 0.3
-    ball.dy = 0.3
+    ball.dx = 0.42
+    ball.dy = 0.42
 
     #for scoring
     pen = turtle.Turtle()
@@ -232,6 +246,12 @@ if input_user==2 :
     wn.listen()
     wn.onkeypress(paddle_b_down, "Down")
 
+    def speed_up():
+        if elapsed_time%5==0:
+            ball.dx+=0.3
+            ball.dy+=0.3
+
+  
     #Main game loop
     while True:
         wn.update()
@@ -286,9 +306,9 @@ if input_user==2 :
             time.write( "SCORE ACHIEVED: {}".format(int(elapsed_time)) , align="center", font=("Courier", 24,"normal"))
 
             sys.exit()
-
-
-
+            
+        
+        
 
 
 
