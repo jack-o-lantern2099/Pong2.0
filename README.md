@@ -6,3 +6,5 @@ Make sure u have a mysql client on your system , connected to python and ready t
 No more preperations needed. Just enjoy this retro beauty and feel the nostalgia 
 :)
 #2.0
+
+Dont forget to  edit the sql func with your username and password for the sql on your systen ok.
