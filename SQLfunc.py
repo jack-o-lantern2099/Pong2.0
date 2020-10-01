@@ -1,6 +1,6 @@
 def WRITE_SCORE(x,s):
     import mysql.connector
-    mydb=mysql.connector.connect(host="localhost",user="root",password="HG@18102003",database="PYTHON")
+    mydb=mysql.connector.connect(host="localhost",user="(Yourusername)",password="(YOURPASSWORD)",database="PYTHON")
     mycursor=mydb.cursor()
     sqlform="INSERT INTO PHIGH(Name,Score) VALUES(%s,%s)"
     info=(x,s)
@@ -9,7 +9,7 @@ def WRITE_SCORE(x,s):
 
 def LEADERBOARD():
     import mysql.connector
-    mydb=mysql.connector.connect(host="localhost",user="root",password="HG@18102003",database="PYTHON")
+    mydb=mysql.connector.connect(host="localhost",user="username",password="password",database="PYTHON")
     mycursor=mydb.cursor()
     mycursor.execute("SELECT * FROM PHIGH ORDER BY Score")
     leader = mycursor.fetchall()
@@ -18,7 +18,7 @@ def LEADERBOARD():
 
 def CREATE():
     import mysql.connector
-    mydb=mysql.connector.connect(host="localhost",user="root",password="HG@18102003",database="PYTHON")
+    mydb=mysql.connector.connect(host="localhost",user="username",password="password",database="PYTHON")
     mycursor=mydb.cursor()
     try:
         mycursor.execute("SHOW TABLES")
