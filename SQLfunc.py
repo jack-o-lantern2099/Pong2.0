@@ -30,5 +30,7 @@ def CREATE():
         print("leader board created")
     mydb.commit()
     
-
+def DBinit():
+    #Database initialize here. Assume no database or table exists.
+    pass #temporarily an empty function.
 
