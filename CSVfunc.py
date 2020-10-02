@@ -1,7 +1,7 @@
 def writeScore (score):
     score = str(score)
     f = open('score.txt', 'w')
-    f.write(score) # appends score to end
+    f.write(score) # appends score to end ###append? Or write? Keep comments helpful XD.
 
 def getHighScore():
     f = open('score.txt', 'r')
