@@ -20,14 +20,14 @@ def CREATE():
     import mysql.connector
     mydb=mysql.connector.connect(host="localhost",user="username",password="password",database="PYTHON")
     mycursor=mydb.cursor()
-    try:
-        mycursor.execute("SHOW TABLES")
-        records=mycursor.fetchall()
-        if 'PHIGH' in records:
-            x=1
-    except:
+    mycursor.execute("SHOW TABLES")
+    records=mycursor.fetchall()
+    if 'PHIGH' in records:
+        x=1    
+    else:
         mycursor.execute("CREATE TABLE PHIGH(Name varchar(20) NOT NULL PRIMARY KEY,Score int(3) NOT NULL )")
         print("leader board created")
     mydb.commit()
 
-
+       
+   
