@@ -29,17 +29,5 @@ def CREATE():
         mycursor.execute("CREATE TABLE PHIGH(Name varchar(20) NOT NULL PRIMARY KEY,Score int(3) NOT NULL )")
         print("leader board created")
     mydb.commit()
-def DBinit():
-    import mysql.connector
-    mydb=mysql.connector.connect(host="localhost",user="root",password="HG@18102003")
-    mycursor=mydb.cursor()
-    try:
-        mycursor.execute("SHOW DATABASES")
-        records=mycursor.fetchall()
-        if 'PYTHON' in records:
-            s=1
-    except:
-        mycursor.execute("CREATE DATABASE PYTHON , USE PYTHON ")
-        print("database created")
-    mydb.commit()
+
 
