@@ -18,16 +18,25 @@ def LEADERBOARD():
 
 def CREATE():
     import mysql.connector
-    mydb=mysql.connector.connect(host="localhost",user="username",password="password",database="PYTHON")
+    mydb=mysql.connector.connect(host="localhost",user="root",password="HG@18102003",database="PYTHON")
     mycursor=mydb.cursor()
-    mycursor.execute("SHOW TABLES")
-    records=mycursor.fetchall()
-    if 'PHIGH' in records:
-        x=1    
-    else:
+    try:
         mycursor.execute("CREATE TABLE PHIGH(Name varchar(20) NOT NULL PRIMARY KEY,Score int(3) NOT NULL )")
         print("leader board created")
-    mydb.commit()
+        mydb.commit()
+    except:
+        
+        mydb.commit()
 
-       
-   
+
+def DBinit():
+    import mysql.connector
+    mydb = mysql.connector.connect(host="localhost",user="root",password="HG@18102003")
+    mycursor = mydb.cursor()
+    try :
+        mycursor.execute("CREATE DATABASE PYTHON ")
+        print("database created")
+        mydb.commit()
+    except:
+        
+        mydb.commit()
